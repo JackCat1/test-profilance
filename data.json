@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "login": "admin",
+      "pass": "e10adc3949ba59abbe56e057f20f883e",
+      "role": "admin"
+    },
+    {
+      "login": "user1",
+      "pass": "6c44e5cd17f0019c64b042e4a745412a",
+      "role": "user"
+    }
+  ],
+  "news": [
+    {
+      "id": 1,
+      "title": "News 1",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861659585,
+      "status": "new"
+    },
+    {
+      "id": 2,
+      "title": "News 2",
+      "prew": "Lorem ipsum dolor sit amet, текст для поиска  consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600860759585,
+      "status": "valid"
+    },
+    {
+      "id": 3,
+      "title": "News 3",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861539585,
+      "status": "new"
+    },
+    {
+      "id": 4,
+      "title": "News 4 текст",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861429585,
+      "status": "valid"
+    },
+    {
+      "id": 5,
+      "title": "News 5",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur,для поиска  adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861639585,
+      "status": "valid"
+    },
+    {
+      "id": 6,
+      "title": "News 6",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861239585,
+      "status": "new"
+    },
+    {
+      "id": 7,
+      "title": "News 7",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, поиска adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user1",
+      "date": 1600861249585,
+      "status": "valid"
+    },
+    {
+      "id": 8,
+      "title": "News 8",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user2",
+      "date": 1600861299585,
+      "status": "new"
+    },
+    {
+      "id": 9,
+      "title": "News 9",
+      "prew": "Lorem ipsum dolor sit amet, consectetur текст для adipisicing elit. Consequatur odit veniam поиска  maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user2",
+      "date": 1600861339585,
+      "status": "valid"
+    },
+    {
+      "id": 10,
+      "title": "News 10",
+      "prew": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+      "full": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      "author": "user2",
+      "date": 1600861569585,
+      "status": "new"
+    }
+  ]
+}

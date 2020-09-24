@@ -10,7 +10,7 @@ export const Header = () => {
         <Container>
           <Row>
             <Col>
-              <Navbar.Brand href="1">Test Profilance</Navbar.Brand>
+              <Link to="/"><Navbar.Brand>Test Profilance</Navbar.Brand></Link>
               <Nav className="mr-auto">
                 <Link to="/" className="text-light nav-link mr-3">
                   Главная

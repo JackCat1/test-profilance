@@ -3,6 +3,6 @@ import { useSelector } from 'react-redux'
 export const Hellow = ()=>{
     const {user} = useSelector(state=>state)
     return (
-        <h1 className="text-center">Привет, {user?user:'Гость'}</h1>
+        <h1 className="text-center">Привет, {user?user.login:'Гость'}</h1>
     )
 }

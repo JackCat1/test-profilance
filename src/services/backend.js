@@ -1,144 +1,249 @@
 import md5 from "md5";
+import {base} from './firebase' 
 export default class Backend {
+  database={}
+  
+  constructor(){    
+    this.database = base
+  }
   users = [
     {
       login: "admin",
       pass: "e10adc3949ba59abbe56e057f20f883e",
+      role:'admin'
     },
     {
-      login: "user",
+      login: "user1",
       pass: "6c44e5cd17f0019c64b042e4a745412a",
+      role:'user'
     },
   ];
   news = [
     {
+      id:1,
       title: "News 1",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user1",
       date: 1600861659585,
       status: "new",
     },
     {
+      id:2,
       title: "News 2",
       prew:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+        "Lorem ipsum dolor sit amet, текст для поиска  consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user1",
       date: 1600860759585,
       status: "valid",
     },
     {
+      id:3,
       title: "News 3",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user1",
       date: 1600861539585,
       status: "new",
     },
     {
-      title: "News 4",
+      id:4,
+      title: "News 4 текст",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user1",
       date: 1600861429585,
       status: "valid",
     },
     {
+      id:5,
       title: "News 5",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+        "Lorem ipsum dolor sit amet consectetur,для поиска  adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      author: "user1",
       date: 1600861639585,
       status: "valid",
     },
     {
+      id:6,
       title: "News 6",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user1",
       date: 1600861239585,
       status: "new",
     },
     {
+      id:7,
       title: "News 7",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+        "Lorem ipsum dolor sit amet consectetur, поиска adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
+      author: "user1",
       date: 1600861249585,
       status: "valid",
     },
     {
+      id:8,
       title: "News 8",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user2",
       date: 1600861299585,
       status: "new",
     },
     {
+      id:9,
       title: "News 9",
       prew:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
+        "Lorem ipsum dolor sit amet, consectetur текст для adipisicing elit. Consequatur odit veniam поиска  maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user2",
       date: 1600861339585,
       status: "valid",
     },
     {
+      id:10,
       title: "News 10",
       prew:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur odit veniam maxime ex quis explicabo, quia nam omnis enim tempore.",
       full:
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque aliquid assumenda dolorum atque enim suscipit voluptatem quam quod facilis, corporis, nulla, ipsa iste temporibus quas. Distinctio aut quidem saepe at nihil, cupiditate eum, velit nostrum quia ea repudiandae nesciunt expedita ex facere ratione explicabo consequatur totam vero eaque tempore error?",
-      author: "user",
+      author: "user2",
       date: 1600861569585,
       status: "new",
     },
   ];
-  login(login, password) {
+  async login(login, password) {
     //Коды ошибок
     // 1- неверный логин
     // 2- неверный пароль
-    const isUser = this.users.find((item) => item.login === login);
-    if (isUser) {
-      const isPass = md5(password) === isUser.pass;
-      if (isPass) {
-        return { status: "success", user: isUser.login };
+    let userBase=null
+    try{
+      userBase = await base.fetch('users',{})
+    }
+    catch(e){
+      return { status: "error", msg: "Сервис временно недоступен. Попробуйте позже", code: 2 };
+
+    }
+    if(userBase){
+      const isUser = this.users.find((item) => item.login === login);
+      if (isUser) {
+        const isPass = md5(password) === isUser.pass;
+        if (isPass) {
+          return { status: "success", user: {login:isUser.login,role:isUser.role} };
+        } else {
+          return { status: "error", msg: "Указан неверный пароль", code: 2 };
+        }
       } else {
-        return { status: "error", msg: "Указан неверный пароль", code: 2 };
+        return {
+          status: "error",
+          msg: "Пользователь не найден. Проверьте правильность логина.",
+          code: 1,
+        };
       }
-    } else {
-      return {
-        status: "error",
-        msg: "Пользователь не найден. Проверьте правильность логина.",
-        code: 1,
-      };
     }
   }
-  getNewsList(user=null){
-      let result = []
-      if(user){
-          
+  async getUser(user){
+    try{
+      const users = await base.fetch('users',{})
+      const userInfo = users.find(item=>item.login===user)
+      if(userInfo){
+        return userInfo
       }else{
-
+        return null
       }
-      return result
+    }
+    catch(e){
+      return null
+    }
+  }
+  async getNewsList(user=null){
+      const sortNews = (a,b)=>{
+        if(a.date>b.date){
+          return -1
+        }
+        if(a.date<b.date){
+          return 1
+        }
+        return 0
+      }
+      let news = await base.fetch('news',{})
+          
+      if(Array.isArray(news)){
+        let result = news.filter(item=>item.status==='valid')
+        if(user){
+          const userInfo = await this.getUser(user)
+          if(userInfo){
+            if(userInfo.role==='admin'){
+              const newNews = news.filter(item=>item.status==='new')
+              result = [...result,...newNews]
+            }else{
+              const newUserNews = news.filter(item=>item.status==='new'&&item.author===userInfo.login)
+              result = [...result,...newUserNews]
+            }
+          }          
+        }
+        if(result.length>0) result.sort(sortNews)
+        return result
+      }
+  }
+  addNews(newsFields){
+    const {title,prew,full,user} = newsFields
+    const userInfo = this.users.find(item=>item.login===user)
+    const newsItem = {
+      id:Date.now()+user,
+      title,
+      prew,
+      full,
+      author:user,
+      date:Date.now(),
+      status:userInfo.role==='admin'?'valid':'new'
+    }
+    console.log('News add')
+    console.log(newsItem)
+    return newsItem
+
+  }
+  delNews(newsId,user){
+    const userInfo = this.users.find(item=>item.login===user)
+    if(userInfo && userInfo.role==='admin'){
+      const newsList = this.news.filter(item=>item.id!==newsId)
+      this.news = newsList
+      return newsList
+    }
+    return this.getNewsList(user)
+  }
+  checkNews(newsId,user){
+    const userInfo = this.users.find(item=>item.login===user)
+    if(userInfo && userInfo.role==='admin'){
+      const newsItem = this.news.find(item=>item.id===newsId)
+      if(newsItem) newsItem.status='valid'
+    }
+    return this.getNewsList(user)
+  }
+  async search(text='',user=null){
+    const newsList = await this.getNewsList(user)
+    if(text){
+      const searchList = newsList.filter(item=>item.title.includes(text) || item.prew.includes(text))
+      return searchList
+    }
+    return newsList
   }
 }

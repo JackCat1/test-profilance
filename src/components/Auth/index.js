@@ -15,7 +15,7 @@ const Auth = ({finish})=>{
     const [pass,setPass] = useState('')
     const [errPass,setErrPass] = useState('')
     const [load,setLoad] = useState(false)
-    const setAuth=()=>{
+    const setAuth=async ()=>{
         let valid=true
         if(!login){ 
             valid=false
@@ -27,11 +27,12 @@ const Auth = ({finish})=>{
         }
         if(valid){
             setLoad(true)
-            const resut = backend.login(login,pass)
+            const resut = await backend.login(login,pass)
+            console.log(resut)
             setLoad(false)
             if(resut.status && resut.status==='success'){
                 setLogin('')
-                setPass('')
+                setPass('')                
                 dispatch(systemActions.setUser(resut.user))
                 finish()
             }
@@ -74,7 +75,7 @@ const Auth = ({finish})=>{
     }
     return (
         <div className="auth-form">
-            <h3 className="text-center">Здравствуйте, {user}</h3>
+            <h3 className="text-center">Здравствуйте, {user.login}</h3>
             <button className="btn btn-primary" type="button" disabled={load} onClick={setLogOut}>{load?<Spinner animation="border" size="sm"/>:null} Выйти</button>
         </div>
     )

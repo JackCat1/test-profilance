@@ -1,0 +1,11 @@
+.news-wrap{
+    display: flex;
+    flex-wrap: wrap;    
+}
+.close-icon{
+    font-size: 2em;
+    font-weight: bold;
+}
+.close-icon:hover{
+    cursor: pointer;
+}

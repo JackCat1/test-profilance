@@ -11,6 +11,11 @@ const reducer = (state,action)=>{
                 ...state,
                 user:action.payload
             }
+        case 'SET_NEWS':
+            return {
+                ...state,
+                news:action.payload
+            }
         default:
             return state
     }

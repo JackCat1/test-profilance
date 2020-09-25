@@ -14,7 +14,7 @@ const NewsList = ()=>{
     const getData = async ()=>{
         try{
             setLoad(true)
-            const newsList = await backend.getNewsList(user?user.login:null)
+            const newsList = await backend.getNewsList(user?user.login:null)            
             dispatch(systemActions.addNews(newsList))
             setLoad(false)
         }

@@ -27,8 +27,7 @@ const Auth = ({finish})=>{
         }
         if(valid){
             setLoad(true)
-            const resut = await backend.login(login,pass)
-            console.log(resut)
+            const resut = await backend.login(login,pass)           
             setLoad(false)
             if(resut.status && resut.status==='success'){
                 setLogin('')

@@ -7,16 +7,16 @@ import { systemActions } from '../../state/actions'
 const AddNewsButton = ()=>{
     const backend = useBackend()
     const dispatch = useDispatch()
-    const {user,news} = useSelector(state=>state)
+    const {user} = useSelector(state=>state)
     const [load,setLoad] = useState(false)
     const [form,showForm] = useState(false)
-    const saveNews = (title,prew,full)=>{
+    const saveNews = async (title,prew,full)=>{
         if(user){
             setLoad(true)
-            const newsInfo = backend.addNews({title,prew,full,user:user.login})
+            const newsInfo = await backend.addNews({title,prew,full,user:user.login})
             setLoad(false)
             showForm(false)
-            dispatch(systemActions.addNews([...news,newsInfo]))
+            dispatch(systemActions.addNews(newsInfo))
         }        
     }
     if(!user){

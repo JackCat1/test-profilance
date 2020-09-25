@@ -9,20 +9,20 @@ const NewsControlPanel = ({news})=>{
     const dispatch = useDispatch()
     const {user} = useSelector(state=>state)
     const [load,setLoad] =useState(false)
-    const delNews = ()=>{
+    const delNews =async ()=>{
         // eslint-disable-next-line no-restricted-globals
         if(confirm('Вы хотите удалить новость?')){
             setLoad(true)
-            const newsList = backend.delNews(news.id,user.login)
+            const newsList = await backend.delNews(news.id,user.login)
             setLoad(false)
             dispatch(systemActions.addNews(newsList))
         }
     }
-    const checkNews = ()=>{
+    const checkNews =async ()=>{
         // eslint-disable-next-line no-restricted-globals
         if(confirm('Вы хотите одобрить новость?')){
             setLoad(true)
-            const newsList = backend.checkNews(news.id,user.login)
+            const newsList = await backend.checkNews(news.id,user.login)
             setLoad(false)
             dispatch(systemActions.addNews(newsList))
         }

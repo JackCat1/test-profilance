@@ -184,8 +184,7 @@ export default class Backend {
         }
         return 0
       }
-      let news = await base.fetch('news',{})
-          
+      let news = await base.fetch('news',{context:this,asArray:true})         
       if(Array.isArray(news)){
         let result = news.filter(item=>item.status==='valid')
         if(user){
@@ -204,9 +203,9 @@ export default class Backend {
         return result
       }
   }
-  addNews(newsFields){
+  async addNews(newsFields){
     const {title,prew,full,user} = newsFields
-    const userInfo = this.users.find(item=>item.login===user)
+    const userInfo = await this.getUser(user)
     const newsItem = {
       id:Date.now()+user,
       title,
@@ -216,32 +215,37 @@ export default class Backend {
       date:Date.now(),
       status:userInfo.role==='admin'?'valid':'new'
     }
-    console.log('News add')
-    console.log(newsItem)
-    return newsItem
+    await base.push('news',{data:newsItem})
+    
+    return this.getNewsList(user)
 
   }
-  delNews(newsId,user){
-    const userInfo = this.users.find(item=>item.login===user)
+  async delNews(newsId,user){
+    const userInfo = await this.getUser(user)
     if(userInfo && userInfo.role==='admin'){
-      const newsList = this.news.filter(item=>item.id!==newsId)
-      this.news = newsList
-      return newsList
-    }
+      const news = await base.fetch('news',{})
+      const baseId = Object.keys(news).find(key=>news[key]['id']===newsId)
+      if(baseId){
+        await base.remove('news/'+baseId)
+      }
+    }    
     return this.getNewsList(user)
   }
-  checkNews(newsId,user){
-    const userInfo = this.users.find(item=>item.login===user)
+  async checkNews(newsId,user){
+    const userInfo = await this.getUser(user)
     if(userInfo && userInfo.role==='admin'){
-      const newsItem = this.news.find(item=>item.id===newsId)
-      if(newsItem) newsItem.status='valid'
+      const news = await base.fetch('news',{})
+      const baseId = Object.keys(news).find(key=>news[key]['id']===newsId)
+      if(baseId){
+        await base.update('news/'+baseId,{data:{status:'valid'}})
+      }      
     }
     return this.getNewsList(user)
   }
   async search(text='',user=null){
     const newsList = await this.getNewsList(user)
     if(text){
-      const searchList = newsList.filter(item=>item.title.includes(text) || item.prew.includes(text))
+      const searchList = newsList.filter(item=>item.title.toLocaleLowerCase().includes(text) || item.prew.toLocaleLowerCase().includes(text))
       return searchList
     }
     return newsList

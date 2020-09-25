@@ -4,7 +4,7 @@ import NewsControlPanel from "../NewsControlPanel";
 export const NewsItem = ({ news,detail }) => {
     const date = new Date(news.date)
   return (
-    <Card style={{ width: "32.9%", margin: "0 .3rem 1rem 0" }}>
+    <Card className="news-item">
       <NewsControlPanel news={news}/>
       <Card.Body>
         <Card.Title>{news.title}</Card.Title>

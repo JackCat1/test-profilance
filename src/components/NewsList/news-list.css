@@ -9,3 +9,12 @@
 .close-icon:hover{
     cursor: pointer;
 }
+.news-item{
+    width: 32.5%;
+    margin: 0 .3rem 1rem 0;
+}
+@media screen and (max-width:792px){
+    .news-item{
+        width: 100%;
+    }
+}
